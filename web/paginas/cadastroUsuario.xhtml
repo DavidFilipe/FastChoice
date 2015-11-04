@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <head>
+        <title>
+            FastChoice
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+     <h:form class="center-block">
+            <div class="row" > 
+                <div class="col-md-4">
+            <fieldset>
+                <!--  Form Name -->
+                <legend>
+                    Tela de Cadastro
+                </legend>
+
+                <!--  Text input -->
+                <div class="form-group">
+                    <h4>Usuário</h4> <h:inputText id="nome" 
+                                                  class="form-control" value="#{clientesBean.cliente.usuario}"  />
+                </div>
+                <!--  Text input -->
+                <div class="form-group">
+                    <h4>Email:</h4> <h:inputText id="email" 
+                                                 class="form-control input-md" value="#{clientesBean.cliente.email}"  />
+                </div>
+             
+                <!--  Password input -->
+                <div class="form-group">
+                    <h4>Senha:</h4> <h:inputSecret id="senha" 
+                                                   class="form-control input-md" value="#{clientesBean.cliente.senha}"  />
+                </div>
+                
+                <!--  Password input -->
+                <div class="form-group">
+                    <h4>Confirmação de senha:</h4> <h:inputSecret id="confSenha" 
+                                                                class="form-control input-md" value="#{clientesBean.cliente.confSenha}"  />
+                </div>
+               
+             <h:panelGrid columns="2">
+                    <button id="cadastrar" name="cadastrar" class="btn btn-danger">Cancelar</button>
+                    <h:commandButton value="Cadastrar" class="btn btn-success"  action="#{clientesBean.adicionarCliente}"/>
+                </h:panelGrid>  
+               
+            
+                <br/><br/> <h:dataTable styleClass="table table-striped" value="#{clientesBean.listaClientes()}" var="tabela" border="1"><br/><br/>
+                    <h:column>
+                        <f:facet name="header">
+                            ID
+                        </f:facet>
+                        <h:outputText value="#{tabela.id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            USUÁRIO
+                        </f:facet>
+                        <h:outputText value="#{tabela.usuario}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            EMAIL
+                        </f:facet>
+                        <h:outputText value="#{tabela.email}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            AÇÕES
+                        </f:facet>
+                        <h:commandLink value="Remover //" action="#{clientesBean.removerCliente(tabela)}"/>
+                        <h:commandLink value=" Editar" action="#{clientesBean.carregarCliente(tabela)}"/>
+
+                    </h:column>
+                </h:dataTable>
+
+            </fieldset>
+                   </div>
+                </div>
+            </h:form> 
+                 
+
+        <script src="http://code.jquery.com/jquery.js"
+        type="text/javascript"></script> <script>
+        src = "js/bootstrap.min.js" type = "text/javascript" xml:space = "preserve" ></script>
+    </body>
+</html>

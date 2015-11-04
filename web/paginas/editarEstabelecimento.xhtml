@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    </h:head>
+    <h:body>
+        <div class="row" > 
+                <div class="col-md-4">
+        <h:form><br/><br/>
+            <h:panelGrid columns="2">  
+                <h4>ID</h4> <h:outputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.id}"/>
+                <h4>Nome</h4> <h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.nome}"/>
+                <h4>CNPJ</h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cnpj}"/>
+                <h4>Cidade</h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cidade}"/>
+                <h4> Bairro </h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.bairro}"/>
+                <h4> Rua</h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.rua}"/>
+                <h4> Número </h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.numero}"/>
+                 <h4> Telefone:</h4><h:inputText class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.telefone}"/>
+      
+                <h:inputHidden/>
+                <h:commandButton value="Atualizar" class="btn btn-success" action="#{estabelecimentosBean.atualizarEstabelecimento()}"/>
+            </h:panelGrid>
+                
+        </h:form>
+                    </div>
+            
+                </div>
+    </h:body>
+</html>

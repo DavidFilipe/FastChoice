@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <head>
+        <title>
+            FastChoice
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+        <div class="row" > 
+                <div class="col-md-4">
+        <h:form class="center-block">
+            <fieldset>
+                <!--  Form Name -->
+                <legend>
+                    Tela de Cadastro
+                </legend>
+
+                <!--  Text input -->
+                <div class="form-group">
+                    <h4>Nome do estabelecimento:</h4> <h:inputText id="nome" 
+                                                  class="form-control" value="#{estabelecimentosBean.estabelecimento.nome}"  />
+                </div>
+                <!--  Text input -->
+                 <div class="form-group">
+                    <h4>CNPJ:</h4> <h:inputText id="cnpj" 
+                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cnpj}"  />
+                </div>
+                
+                <div class="form-group">
+                    <h4>Cidade:</h4> <h:inputText id="cidade" 
+                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.cidade}"  />
+                </div>
+             
+                <!--  Password input -->
+                <div class="form-group">
+                    <h4>Bairro:</h4> <h:inputText id="bairro" 
+                                                    class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.bairro}"  />
+                </div>
+                
+                <!--  Password input -->
+                <div class="form-group">
+                    <h4>Rua:</h4> <h:inputText id="rua" 
+                                                                  class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.rua}"  />
+                </div>
+                
+                <div class="form-group">
+                    <h4>Numero:</h4> <h:inputText id="numero" 
+                                                 class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.numero}"  />
+                </div>
+                <div class="form-group">
+                    <h4>Telefone:</h4> <h:inputText id="telefone" 
+                                                 class="form-control input-md" value="#{estabelecimentosBean.estabelecimento.telefone}"  />
+                </div>
+               
+             <h:panelGrid columns="2">
+                    <button id="cadastrar" name="cadastrar" class="btn btn-danger">Cancelar</button>
+                    <h:commandButton value="Cadastrar" class="btn btn-success"  action="#{estabelecimentosBean.adicionarEstabelecimento()}"/>
+                </h:panelGrid>  
+               
+            
+                <br/><br/> <h:dataTable styleClass="table table-striped" value="#{estabelecimentosBean.listaEstabelecimentos()}" var="tabela" border="1"><br/><br/>
+                    <h:column>
+                        <f:facet name="header">
+                            ID
+                        </f:facet>
+                        <h:outputText value="#{tabela.id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Nome do estabelecimento
+                        </f:facet>
+                        <h:outputText value="#{tabela.nome}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            CNPJ
+                        </f:facet>
+                        <h:outputText value="#{tabela.cnpj}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Cidade
+                        </f:facet>
+                        <h:outputText value="#{tabela.cidade}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Bairro
+                        </f:facet>
+                        <h:outputText value="#{tabela.bairro}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Rua
+                        </f:facet>
+                        <h:outputText value="#{tabela.rua}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Número
+                        </f:facet>
+                        <h:outputText value="#{tabela.numero}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Telefone
+                        </f:facet>
+                        <h:outputText value="#{tabela.telefone}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            AÇÕES
+                        </f:facet>
+                        <h:commandLink value="Remover //" action="#{estabelecimentosBean.removerEstabelecimento
+                                                                    (tabela)}"/>
+                        <h:commandLink value=" Editar" action="#{estabelecimentosBean.carregarEstabelecimento
+                                                                 (tabela)}"/>
+
+                    </h:column>
+                </h:dataTable>
+                
+            </fieldset>
+                
+        </h:form>
+            </div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery.js"
+        type="text/javascript"></script> <script>
+        src = "js/bootstrap.min.js" type = "text/javascript" xml:space = "preserve" ></script>
+    </body>
+</html>
