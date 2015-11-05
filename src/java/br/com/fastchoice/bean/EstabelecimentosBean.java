@@ -25,11 +25,12 @@ public class EstabelecimentosBean {
       listaEstabelecimentos =  estabelecimentoDao.getList();
       return this.listaEstabelecimentos;
     }
-    /*public List listaEstabelecimentosPontos(){
+   
+    public List listaEstabelecimentosPontos(){
       listaEstabelecimentos =  estabelecimentoDao.ordenarPontos();
       return this.listaEstabelecimentos;
     }
-    */
+  
     public EstabelecimentosBean() {
     
     }
@@ -74,6 +75,8 @@ public class EstabelecimentosBean {
          estabelecimento.setTelefone(null);
          return "cadastroEstabelecimento";
      }
+     
+     
      
      public String carregarEstabelecimento(Estabelecimento es){
         this.estabelecimento = es;

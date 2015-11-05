@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.fastchoice.DAO;
 
 import br.com.fastchoice.entity.Estabelecimento;
@@ -30,6 +25,15 @@ public class EstabelecimentoDAO {
         return list;
 
     }
+    
+    public List<Estabelecimento> ordenarPontos() {
+    sessao = HibernateUtil.getSessionFactory().openSession();
+    trans = sessao.beginTransaction();
+    String jpql = "SELECT estabelecimento FROM Estabelecimento estabelecimento ORDER BY estabelecimento.id DESC";
+    return sessao.createQuery(jpql).list();
+}
+
+
 
     public void adicionarEstabelecimento(Estabelecimento es) {
         try {
@@ -70,11 +74,6 @@ public class EstabelecimentoDAO {
         }
 
     }
-
-    /* public List<Estabelecimento> ordenarPontos() {
-        String jpql = "SELECT * FROM estabelecimentos ORDER BY pontos DESC";
-        return sessao.createQuery(jpql).list();
-    } */
 
     public void editarEstabelecimento(Estabelecimento es) {
 
