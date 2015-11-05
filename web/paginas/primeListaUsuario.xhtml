@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" 
+                template="main.xhtml">
+
+    <ui:define name="content">
+        <h:form><div align="left">
+            <p:commandButton value="Novo" action="#{clientesBean.adicionarCliente()}" icon="ui-icon-plus"/>
+        </div>
+        </h:form><br/>
+        <h:form>
+          <p:dataTable var="tabela" value="#{clientesBean.listaClientes()}">
+            
+             <p:column headerText="Id">
+                <h:outputText value="#{tabela.id}" />
+            </p:column>
+
+            <p:column headerText="nome">
+                <h:outputText value="#{tabela.usuario}" />
+            </p:column>
+
+            <p:column headerText="cnpj">
+                <h:outputText value="#{tabela.email}" />
+            </p:column>
+
+            
+            <p:column headerText="AÇÕES">
+                <center>
+                <p:commandButton value="Remover" action="#{clientesBean.removerCliente(tabela)}" />
+                <p:commandButton value="Editar" action="#{clientesBean.atualizarCliente(tabela)}" />
+            </center>
+            </p:column>
+             
+          
+         </p:dataTable>
+          
+        </h:form>
+    </ui:define>
+</ui:composition>

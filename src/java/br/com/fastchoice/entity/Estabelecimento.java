@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "estabelecimentos")
 public class Estabelecimento implements Serializable {
@@ -24,8 +25,19 @@ public class Estabelecimento implements Serializable {
     String rua;
     String numero;
     String telefone;
+    int pontos;
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
   
 
+   
+    
     public String getNome() {
         return nome;
     }

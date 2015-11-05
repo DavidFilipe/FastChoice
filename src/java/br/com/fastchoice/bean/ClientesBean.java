@@ -7,10 +7,12 @@ package br.com.fastchoice.bean;
 
 import br.com.fastchoice.DAO.ClienteDAO;
 import br.com.fastchoice.entity.Cliente;
+import static com.mchange.v2.c3p0.impl.C3P0Defaults.user;
 import java.util.List;
 import java.util.Objects;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import org.hibernate.Query;
 
 /**
  *
@@ -34,13 +36,13 @@ public class ClientesBean {
     
     }
     
-    public String adicionarCliente (){
+    public String adicionarCliente(){
        clienteDao.adicionarCliente(cliente);
        cliente.setUsuario(null);
        cliente.setEmail(null);
        cliente.setSenha(null);
        cliente.setConfSenha(null);
-        return "cadastroUsuario";
+        return "primeCadastroUsuario";
     }
 
      public String removerCliente (Cliente c){
@@ -50,7 +52,7 @@ public class ClientesBean {
        this.cliente.setEmail("");
        this.cliente.setSenha("");
        this.cliente.setConfSenha("");
-       return "cadastroUsuario";
+       return "primeCadastroUsuario";
     }
      
     /**
@@ -65,7 +67,7 @@ public class ClientesBean {
          cliente.setEmail(null);
          cliente.setSenha(null);
          cliente.setConfSenha(null);
-         return "cadastroUsuario";
+         return "editarUsuario";
      }
      
      public String carregarCliente(Cliente c){
@@ -103,5 +105,7 @@ public class ClientesBean {
         }
         return true;
     }
+    
+   
     
 }

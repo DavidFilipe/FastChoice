@@ -7,37 +7,20 @@
                 template="main.xhtml">
 
     <ui:define name="content">
-        <h:form>
-            <p:panelGrid>
-            <p:row>
-                <p:column>
-                   Usuário <p:inputText id="nome1" value="#{clientesBean.cliente.usuario}" />
-                </p:column>
-                 <p:column>
-                   Usuário <p:inputText id="nome2" value="#{clientesBean.cliente.usuario}" />
-                </p:column>
-                <p:column>
-                    <p:inputText></p:inputText>
-                </p:column>
-            </p:row>
-         
-        </p:panelGrid>   
-            <div>Usuário: <p:inputText id="nome" value="#{clientesBean.cliente.usuario}" /></div>
+        <h:form><center>
+                <br/><br/>
+                <p:panelGrid columns="2" style="font-size: 30px">
+                Usuário:
+                <p:inputText id="nome" value="#{clientesBean.cliente.usuario}" />
+                Email:
+                <p:inputText id="email" value="#{clientesBean.cliente.email}" />
+                Senha:
+                <p:inputText id="senha" value="#{clientesBean.cliente.senha}" />
+                
+            </p:panelGrid><br/>
+                <p:commandButton value="Cadastrar" action="#{clientesBean.adicionarCliente()}" />
+            </center>
             
-            <div>Email: <p:inputText id="email" value="#{clientesBean.cliente.email}" /></div>
-   
-       
-            
-            <h:panelGrid columns="2" id="matchGrid" cellpadding="5">                   
-                <h:outputLabel for="pwd1" value="Senha: *" />
-                <p:password id="senha" value="senha" match="pwd2" label="Password 1" required="true" />
-
-                <h:outputLabel for="pwd2" value="Confirmação da senha: *" />
-                <p:password id="pwd2" value="senha" label="Password 2" required="true" />
-            </h:panelGrid>
-
-            <p:commandButton update="matchGrid" value="Cadastrar" />
-
-        </h:form>
+         </h:form>
     </ui:define>
 </ui:composition>

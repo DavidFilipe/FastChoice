@@ -45,6 +45,7 @@ public class EstabelecimentoDAO {
             estabelecimento.setRua(es.getRua());
             estabelecimento.setNumero(es.getNumero());
             estabelecimento.setTelefone(es.getTelefone());
+            estabelecimento.setPontos(es.getPontos());
             sessao.save(estabelecimento);
             trans.commit();
         } catch (Exception e) {
@@ -69,6 +70,11 @@ public class EstabelecimentoDAO {
         }
 
     }
+
+    /* public List<Estabelecimento> ordenarPontos() {
+        String jpql = "SELECT * FROM estabelecimentos ORDER BY pontos DESC";
+        return sessao.createQuery(jpql).list();
+    } */
 
     public void editarEstabelecimento(Estabelecimento es) {
 

@@ -35,10 +35,6 @@ public class ClienteDAO {
        
     }
     
-    
-    
-    
-
     public void adicionarCliente(Cliente c) {
         try {
             sessao = HibernateUtil.getSessionFactory().openSession();

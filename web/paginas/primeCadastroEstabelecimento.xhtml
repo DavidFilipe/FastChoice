@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui" 
+                template="main.xhtml">
+
+    <ui:define name="content">
+        <h:form><center>
+                <br/><br/>
+                <p:panelGrid columns="2" style="font-size: 30px">
+                Usuário:
+                <p:inputText id="nome" value="#{estabelecimentosBean.estabelecimento.nome}" />
+                Cnpj:
+                <p:inputText id="cnpj" value="#{estabelecimentosBean.estabelecimento.cnpj}" />
+                Telefone:
+                <p:inputText id="telefone" value="#{estabelecimentosBean.estabelecimento.telefone}" />
+                Cidade:
+                <p:inputText id="cidade" value="#{estabelecimentosBean.estabelecimento.cidade}" />
+                Bairro:
+                <p:inputText id="bairro" value="#{estabelecimentosBean.estabelecimento.bairro}" />
+                Rua:
+                <p:inputText id="rua" value="#{estabelecimentosBean.estabelecimento.rua}" />
+                Número:
+                <p:inputText id="numero" value="#{estabelecimentosBean.estabelecimento.numero}" />
+                Pontos:
+                <p:inputText id="pontos" value="#{estabelecimentosBean.estabelecimento.pontos}" />
+             
+                
+            </p:panelGrid><br/>
+            <p:commandButton value="Cadastrar" action="#{estabelecimentosBean.adicionarEstabelecimento()}" />
+            </center>
+            
+         </h:form>
+    </ui:define>
+</ui:composition>
