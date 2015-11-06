@@ -6,7 +6,7 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Login Usuário</title>
+		<title>#{msg.login}</title>
 		
 		<h:outputStylesheet library="css" name="sistema.css"/>
 	</h:head>
@@ -23,14 +23,14 @@
 					<h:panelGrid columns="2" styleClass="form-grid" style="padding: 10px"
 							columnClasses="label, campo" id="panel">
 					
-						<h:outputLabel value="Nome"/>
+						<h:outputLabel value="#{msg.username}"/>
 						<h:inputText value="#{segurancaBean.usuario}" size="20"/>
 						
-						<h:outputLabel value="Senha"/>
+						<h:outputLabel value="#{msg.password}"/>
 						<h:inputSecret value="#{segurancaBean.senha}" size="20"/>
 						
 						<h:panelGroup/>
-						<h:commandButton value="Logar" action="#{segurancaBean.logar}"/>
+						<h:commandButton value="#{msg.login}" action="#{segurancaBean.logar}"/>
 					</h:panelGrid>
 				</h:form>
 			</div>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/FastChoice">
-  <Realm className="org.apache.catalina.realm.JDBCRealm" connectionName="root" connectionPassword="admin" connectionURL="jdbc:mysql://localhost/fastchoice" driverName="com.mysql.jdbc.Driver" roleNameCol="nome_permissao" userCredCol="senha" userNameCol="nome_usuario" userRoleTable="permissao_usuario" userTable="usuario"/>
+    <Realm className="org.apache.catalina.realm.JDBCRealm" 
+         driverName="com.mysql.jdbc.Driver"
+         connectionURL="jdbc:mysql://localhost:3306/fastchoice" 
+         connectionName="root" connectionPassword="admin" 
+         userTable="usuario" userNameCol="nome_usuario" 
+         userCredCol="senha"  userRoleTable="permissao_usuario"
+         roleNameCol="nome_permissao"/>
 </Context>
