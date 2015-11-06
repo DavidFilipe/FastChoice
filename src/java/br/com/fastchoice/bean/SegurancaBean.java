@@ -1,3 +1,4 @@
+
 package br.com.fastchoice.bean;
 
 import br.com.fastchoice.util.FacesUtil;
@@ -11,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 @ManagedBean
 public class SegurancaBean {
 
-	private String usuario;
-	private String senha;
-	
-	public String logar() {
-		try {
+    private String usuario;
+    private String senha;
+
+    public String logar() {
+      try {
 			this.getRequest().login(this.usuario, this.senha);
 			return "Home?faces-redirect=true";
 		} catch (ServletException e) {
@@ -23,29 +24,30 @@ public class SegurancaBean {
 					FacesUtil.getMensagemI18n("username_password_does_not_match"));
 			return null;
 		}
-	}
-	
-	public String sair() throws ServletException {
-		this.getRequest().logout();
-		return "Login?faces-redirect=true";
-	}
-	
-	private HttpServletRequest getRequest() {
-		FacesContext context = FacesContext.getCurrentInstance();
-		return (HttpServletRequest) context.getExternalContext().getRequest();
-	}
-	
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	
+    }
+
+    public String sair() throws ServletException {
+        this.getRequest().logout();
+        return "Login?faces-redirect=true";
+    }
+
+
+    private HttpServletRequest getRequest() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        return (HttpServletRequest) context.getExternalContext().getRequest();
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getSenha() {
+        return senha;
+    }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
 }
